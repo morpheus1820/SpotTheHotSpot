@@ -1,9 +1,15 @@
 SpotTheHotSpot
 ==============
 
+#### Using this software
+This software is released under the GPLv2 license.
+If you use this software in a scientific publication, please cite the paper:
+
+`TBD bibtex reference`
+
 ## Matlab version
 
-### Requirements
+#### Requirements
 * Image Processing Toolbox
 * Signal Processing Toolbox
 
@@ -11,18 +17,18 @@ The Signal Processing Toolbox is needed just for the `findpeaks()` function. Wri
 
 ## C++ version
 
-### Requirements
+#### Requirements
 * [OpenCV](http://opencv.org/)
 
-###Instructions
+#### Instructions
 1. `cd src`
 2. `make`
 3. `./main [videofile]`
 
 ## Pyhton version (Stitching)
 
-### Requirements
+#### Requirements
 * [OpenCV](http://opencv.org/)
 
-### Instructions
+#### Instructions
 1. `./main_stitching_asift.py [videofile]`
