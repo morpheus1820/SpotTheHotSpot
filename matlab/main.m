@@ -85,6 +85,8 @@ Xindexes = zeros(length(LOCS), modulesPerRow);
 sortedIndexes = zeros(length(LOCS), modulesPerRow);
 row(length(LOCS),modulesPerRow)=struct('BoundingBox',[],'FilledImage',[]);
 
+
+
 for rowIdx=1:length(LOCS)
 
    shuffledSelectedX(rowIdx,:) = selectedCentroids.X(rowIdx,[selectedCentroidsIndexes(rowIdx,:)]);
@@ -96,7 +98,10 @@ for rowIdx=1:length(LOCS)
    row(rowIdx,:) = segModules(sortedIndexes(rowIdx,:));
    
    for k=1:modulesPerRow
-   Modules{rowIdx,k} = imcrop(rowFrames(:,:,rowIdx), row(rowIdx,k).BoundingBox);
+    Modules{rowIdx,k} = imcrop(rowFrames(:,:,rowIdx), row(rowIdx,k).BoundingBox);
+    % modifica ste
+    SegmentedModules{rowIdx,k} = adaptivethreshold( Modules{rowIdx,k},51,-0.2);
+    % fine modifica
    end
 
 end
